@@ -33,10 +33,12 @@ function NewTodo() {
         <Input
           tittle='Add todo'
           name='title'
+          color='bg-slate-900'
         />
         <TextArea
           title='description'
           name='description'
+          color='bg-slate-900'
         />
       </div>
       <Button

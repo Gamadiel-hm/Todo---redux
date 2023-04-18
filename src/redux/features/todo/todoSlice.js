@@ -6,10 +6,13 @@ export const todoSlice = createSlice({
   reducers: {
     addTodo: (state, action) => {
       state.push(action.payload);
+    },
+    updateTodo: (state, action) => {
+      console.log(action);
     }
   }
 });
 
-export const { addTodo } = todoSlice.actions;
+export const { addTodo, updateTodo } = todoSlice.actions;
 
 export default todoSlice.reducer;

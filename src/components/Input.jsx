@@ -1,7 +1,7 @@
-function Input({ tittle, name }) {
+function Input({ tittle, name, color }) {
   return (
     <input
-      className='dark:bg-slate-900 px-2 py-1 outline-none rounded text-gray-200'
+      className={`${color} px-2 py-1 outline-none rounded `}
       type='text'
       placeholder={tittle}
       name={name}

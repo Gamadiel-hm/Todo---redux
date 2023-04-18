@@ -1,7 +1,12 @@
+import useRedux from '../hooks/useRedux';
 import Button from './Button';
+import Input from './Input';
+import Modal from './Modal';
+import TextArea from './TextArea';
 
 function TodoLi({ todo }) {
-  const { uuid, title, description, completed } = todo;
+  const { uuid, title, description } = todo;
+  const { dispatchUpdate } = useRedux();
 
   return (
     <>
@@ -20,6 +25,25 @@ function TodoLi({ todo }) {
             color='bg-rose-600'
           />
         </div>
+        <Modal title={title}>
+          <form className='flex flex-col p-7 gap-8 place-content-center h-full'>
+            <Input
+              name='ChangeTodo'
+              color='bg-indigo-500'
+              tittle='Change todo'
+            />
+            <TextArea
+              title='description'
+              name='descriptionChange'
+              color='bg-indigo-500'
+            />
+            <Button
+              title='Change'
+              color='bg-indigo-500'
+              type='submit'
+            />
+          </form>
+        </Modal>
       </li>
     </>
   );
